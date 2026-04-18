@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Midnight Indigo design system. All colors HSL. */
+
+@layer base {
+  :root {
+    /* Core palette */
+    --background: 240 50% 6%;          /* #0a0a1a */
+    --foreground: 230 40% 92%;
+
+    --surface: 235 45% 14%;            /* #141432 */
+    --surface-elevated: 236 50% 22%;   /* #1e1e5a */
+
+    --card: 235 45% 11%;
+    --card-foreground: 230 40% 92%;
+
+    --popover: 235 45% 11%;
+    --popover-foreground: 230 40% 92%;
+
+    --primary: 240 84% 60%;            /* electric indigo #4f46e5 */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 250 95% 72%;
+
+    --secondary: 236 50% 22%;
+    --secondary-foreground: 230 40% 92%;
+
+    --muted: 235 30% 18%;
+    --muted-foreground: 230 20% 65%;
+
+    --accent: 250 95% 72%;
+    --accent-foreground: 240 50% 6%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 235 35% 22%;
+    --input: 235 35% 22%;
+    --ring: 240 84% 60%;
+
+    --radius: 1rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(240 84% 60%), hsl(265 90% 65%));
+    --gradient-hero: radial-gradient(ellipse at top, hsl(240 70% 25% / 0.6), transparent 60%),
+                     radial-gradient(ellipse at bottom right, hsl(265 80% 30% / 0.4), transparent 60%);
+    --gradient-glow: radial-gradient(circle at center, hsl(240 84% 60% / 0.35), transparent 70%);
+    --gradient-text: linear-gradient(135deg, hsl(230 40% 98%), hsl(250 95% 80%));
+
+    /* Shadows */
+    --shadow-glow: 0 0 60px hsl(240 84% 60% / 0.35);
+    --shadow-elegant: 0 30px 80px -20px hsl(240 84% 30% / 0.5);
+    --shadow-card: 0 10px 40px -15px hsl(240 80% 10% / 0.8);
+
+    /* Transitions */
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-smooth: all 0.6s var(--ease-out-expo);
+
+    --sidebar-background: 240 50% 6%;
+    --sidebar-foreground: 230 40% 92%;
+    --sidebar-primary: 240 84% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 235 45% 14%;
+    --sidebar-accent-foreground: 230 40% 92%;
+    --sidebar-border: 235 35% 22%;
+    --sidebar-ring: 240 84% 60%;
+  }
+
+  .dark {
+    --background: 240 50% 6%;
+    --foreground: 230 40% 92%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "DM Sans", system-ui, sans-serif;
+    background-image: var(--gradient-hero);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-primary {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .glass {
+    background: hsl(var(--surface) / 0.5);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--border) / 0.6);
+  }
+
+  .glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(hsl(var(--border) / 0.3) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.3) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  }
+}
