@@ -2,18 +2,18 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const codeLines = [
-  { text: "import torch", tokens: [{ t: "import ", c: "text-[#c084fc]" }, { t: "torch", c: "text-[#7dd3fc]" }] },
-  { text: "from transformers import AutoModel", tokens: [{ t: "from ", c: "text-[#c084fc]" }, { t: "transformers ", c: "text-[#7dd3fc]" }, { t: "import ", c: "text-[#c084fc]" }, { t: "AutoModel", c: "text-[#7dd3fc]" }] },
+  { text: "from typing import List", tokens: [{ t: "from ", c: "text-[#c084fc]" }, { t: "typing ", c: "text-[#7dd3fc]" }, { t: "import ", c: "text-[#c084fc]" }, { t: "List", c: "text-[#7dd3fc]" }] },
+  { text: "import ai_frameworks", tokens: [{ t: "import ", c: "text-[#c084fc]" }, { t: "ai_frameworks", c: "text-[#7dd3fc]" }] },
   { text: "", tokens: [] },
-  { text: "class NeuralAgent:", tokens: [{ t: "class ", c: "text-[#c084fc]" }, { t: "NeuralAgent", c: "text-[#fbbf24]" }, { t: ":", c: "text-foreground/80" }] },
+  { text: "class SmitPatel(AIEngineer):", tokens: [{ t: "class ", c: "text-[#c084fc]" }, { t: "SmitPatel", c: "text-[#fbbf24]" }, { t: "(", c: "text-foreground/80" }, { t: "AIEngineer", c: "text-[#4ade80]" }, { t: "):", c: "text-foreground/80" }] },
   { text: "    def __init__(self):", tokens: [{ t: "    def ", c: "text-[#c084fc]" }, { t: "__init__", c: "text-[#a78bfa]" }, { t: "(", c: "text-foreground/80" }, { t: "self", c: "text-[#f472b6]" }, { t: "):", c: "text-foreground/80" }] },
-  { text: "        self.model = AutoModel", tokens: [{ t: "        ", c: "" }, { t: "self", c: "text-[#f472b6]" }, { t: ".model = ", c: "text-foreground/80" }, { t: "AutoModel", c: "text-[#7dd3fc]" }] },
-  { text: "        self.ready = True", tokens: [{ t: "        ", c: "" }, { t: "self", c: "text-[#f472b6]" }, { t: ".ready = ", c: "text-foreground/80" }, { t: "True", c: "text-[#fbbf24]" }] },
+  { text: "        self.skills: List[str] = [", tokens: [{ t: "        ", c: "" }, { t: "self", c: "text-[#f472b6]" }, { t: ".skills: ", c: "text-foreground/80" }, { t: "List", c: "text-[#7dd3fc]" }, { t: "[", c: "text-foreground/80" }, { t: "str", c: "text-[#7dd3fc]" }, { t: "] = [", c: "text-foreground/80" }] },
+  { text: "            'Python', 'LLMs', 'RAG',", tokens: [{ t: "            ", c: "" }, { t: "'Python'", c: "text-[#a3e635]" }, { t: ", ", c: "text-foreground/80" }, { t: "'LLMs'", c: "text-[#a3e635]" }, { t: ", ", c: "text-foreground/80" }, { t: "'RAG'", c: "text-[#a3e635]" }, { t: ",", c: "text-foreground/80" }] },
+  { text: "            'LangChain', 'Computer Vision'", tokens: [{ t: "            ", c: "" }, { t: "'LangChain'", c: "text-[#a3e635]" }, { t: ", ", c: "text-foreground/80" }, { t: "'Computer Vision'", c: "text-[#a3e635]" }] },
+  { text: "        ]", tokens: [{ t: "        ]", c: "text-foreground/80" }] },
+  { text: "        self.status = 'Ready to Build'", tokens: [{ t: "        ", c: "" }, { t: "self", c: "text-[#f472b6]" }, { t: ".status = ", c: "text-foreground/80" }, { t: "'Ready to Build'", c: "text-[#a3e635]" }] },
   { text: "", tokens: [] },
-  { text: "    def think(self, prompt):", tokens: [{ t: "    def ", c: "text-[#c084fc]" }, { t: "think", c: "text-[#a78bfa]" }, { t: "(", c: "text-foreground/80" }, { t: "self, prompt", c: "text-[#f472b6]" }, { t: "):", c: "text-foreground/80" }] },
-  { text: '        return self.model(prompt)', tokens: [{ t: "        ", c: "" }, { t: "return ", c: "text-[#c084fc]" }, { t: "self", c: "text-[#f472b6]" }, { t: ".model(prompt)", c: "text-foreground/80" }] },
-  { text: "", tokens: [] },
-  { text: "# ✨ shipping intelligent UX", tokens: [{ t: "# ✨ shipping intelligent UX", c: "text-muted-foreground italic" }] },
+  { text: "# ✨ shipping impactful AI solutions", tokens: [{ t: "# ✨ shipping impactful AI solutions", c: "text-muted-foreground italic" }] },
 ];
 
 const CodeWindow = () => {
